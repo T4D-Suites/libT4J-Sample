@@ -32,6 +32,16 @@ def start(){
                         if ( ( "${env.M_BranchName}" == "null" ) || ( "${env.M_BranchName}" == "" ) ){
                             env.M_BranchName="${env.BRANCH_NAME}"
                         }
+                        if ( ( "${env.M_NodeTimeout}" == "null" ) || ( "${env.M_NodeTimeout}" == "" ) ){
+                            env.M_NodeTimeout="12"
+                        }
+                        if ( ( "${env.M_NodeTimeoutUnit}" == "null" ) || ( "${env.M_NodeTimeoutUnit}" == "" ) ){
+                            env.M_NodeTimeoutUnit="HOURS"
+                        }
+                        if ( ( "${env.M_NodeTimeoutFailure}" == "null" ) || ( "${env.M_NodeTimeoutFailure}" == "" ) ){
+                            env.M_NodeTimeoutFailure="true"
+                        }
+                        
                         env.M_CurrentDate="${M_Ci.getCurrentDate()}"
                         env.M_Workspace="${M_Ci.getWorkspace()}"
                         
